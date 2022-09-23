@@ -1,16 +1,34 @@
-
-import Card from './components/Card'
+import React from 'react';
+import Card from './components/Card/Card'
 import Header from './components/Header'
 import Drawer from './components/Drawer';
 
 
-function App() {
-  return (
+const sneakers = [
+  {name: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 12999, imgUrl: "img/sneakers/nike1.jpg", key: ''},
+  {name: 'Мужские Кроссовки Nike Air Max 270', price: 12999, imgUrl: "img/sneakers/2.jpg", key: ''},
+  {name: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 8499, imgUrl: "img/sneakers/3.jpg", key: ''},
+  {name: 'Кроссовки Puma X Aka Boku Future Rider', price: 8999, imgUrl: "img/sneakers/4.jpg", key: ''},
+  // {name: 'Мужские Кроссовки Under Armour Curry 8', price: 15199, imgUrl: "img/sneakers/5.jpg"},
+  // {name: 'Мужские Кроссовки Nike Kyrie 7', price: 11299, imgUrl: "img/sneakers/6.jpg"},
+  // {name: 'Мужские Кроссовки Jordan Air Jordan 11', price: 10799, imgUrl: "img/sneakers/7.jpg"},
+  // {name: 'Мужские Кроссовки Nike LeBron XVIII', price: 16499, imgUrl: "img/sneakers/8.jpg"}
+]
 
+
+
+
+function App() {
+  const [cartO, setCart] = React.useState(false);
+  
+  
+
+  return (
     <div className="wrapper clear">
       
-      <Header/>
-      <Drawer/>
+      {cartO ? <Drawer onClickClose={() => setCart(false)}/> : null}
+      <Header onClickCart={() => setCart(true)}/>
+      
 
       <div className="content p-40 ">
         <div className="d-flex align-center justify-between">
@@ -23,58 +41,13 @@ function App() {
         
         <div className="d-flex justify-between">
 
-        <Card/>
+        {sneakers.map((obj, index) =>
+            <Card title={obj.name} price={obj.price}
+            imgUrl={obj.imgUrl} key={index} 
+            onClickPlus={() => console.log(obj)}
+            onFavorite={() => console.log("Добавленно в закладки", obj)}/>
+        )}
 
-        <div className="card">
-          <div className="favorite">
-            <a href="#" className="aLikes"></a>
-          </div>
-          <center><img width="133px" height="112px" src="img/sneakers/2.jpg" /></center>
-          <div className="width">
-          <h5>Мужские Кроссовки Nike Air Max 270</h5>
-          <div className="item_text d-flex justify-between align-center">
-            <div className="item_price d-flex flex-column">
-              <span>Цена:</span>
-              <b>12999 руб.</b>
-            </div>
-            <button><img width="11px" height="11px" src="img/plus.svg" /></button>
-          </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="favorite">
-            <a href="#" className="aLikes"></a>
-          </div>
-          <center><img width="133px" height="112px" src="img/sneakers/3.jpg" /></center>
-          <div className="width">
-          <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
-          <div className="item_text d-flex justify-between align-center">
-            <div className="item_price d-flex flex-column">
-              <span>Цена:</span>
-              <b>8499 руб.</b>
-            </div>
-            <button><img width="11px" height="11px" src="img/plus.svg" /></button>
-          </div>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="favorite">
-            <a href="#" className="aLikes"></a>
-          </div>
-          <center><img width="133px" height="112px" src="img/sneakers/4.jpg" /></center>
-          <div className="width">
-          <h5>Кроссовки Puma X Aka Boku Future Rider</h5>
-          <div className="item_text d-flex justify-between align-center">
-            <div className="item_price d-flex flex-column">
-              <span>Цена:</span>
-              <b>8999 руб.</b>
-            </div>
-            <button><img width="11px" height="11px" src="img/plus.svg" alt="img"/></button>
-          </div>
-          </div>
-        </div>
         </div>
       </div>
       

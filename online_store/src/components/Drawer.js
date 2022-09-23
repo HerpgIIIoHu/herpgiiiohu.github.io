@@ -1,11 +1,11 @@
 import React from 'react'
-import Card from './Card'
+import Card from './Card/Card'
 
-const Drawer = () => {
+const Drawer = (props) => {
   return (
-    <div style={{display: 'none'}} className="overlay">
+    <div className="overlay">
     <div className="drawer">
-          <h2 className="d-flex justify-between">Корзина<a className="cu-p"><img width="32px" height="32px" src="img/close.svg" /></a></h2>
+          <h2 className="d-flex justify-between">Корзина<a className="cu-p"><img onClick={props.onClickClose} width="32px" height="32px" src="img/close.svg" /></a></h2>
           <div className="itemss">
           <div className="cartItem d-flex align-center">
             <div className="logoCart">
