@@ -2,10 +2,11 @@ import React from "react";
 import styles from './Card.module.scss'
 
 
-function Card(props) {
+function Card({ title, price, onClickPlus, onFavorite, imgUrl }) {
     //useState()--------------------------------------------------------------------------------------
     const [img, setImg] = React.useState("img/plus.jpg");
     const onPlus = () => {
+        onClickPlus();
         if (img == "img/plus.jpg") {
             setImg("img/check.jpg");
         } else {
@@ -16,15 +17,15 @@ function Card(props) {
     return(
         <div className={styles.card}>
     <div className="favorite">
-        <a href="#" className="aLikes" onClick={props.onFavorite}></a>
+        <a href="#" className="aLikes" onClick={onFavorite}></a>
         </div>
-          <center><img width="133px" height="112px" src={props.imgUrl} /></center>
+          <center><img width="133px" height="112px" src={imgUrl} /></center>
           <div className="width">
-          <h5>{props.title}</h5>
+          <h5>{title}</h5>
           <div className='item_text d-flex justify-between align-center'>
             <div className="item_price d-flex flex-column">
               <span>Цена:</span>
-              <b>{props.price} руб.</b>
+              <b>{price} руб.</b>
             </div>
                 <img className={styles.btnPlus} onClick={onPlus} src={img} />
         </div>
