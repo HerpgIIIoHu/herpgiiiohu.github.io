@@ -14,7 +14,7 @@ const Header = (props) => {
           <li onClick={props.onClickCart} className="cu-p">
             <img className="mr-30" src="img/cart.svg" />
             <span className="mr-30">
-              1205 руб.
+              0 руб.
             </span>
           </li>
           <li>

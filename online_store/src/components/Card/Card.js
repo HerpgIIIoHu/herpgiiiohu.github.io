@@ -4,20 +4,24 @@ import styles from './Card.module.scss'
 
 function Card({ title, price, onClickPlus, onFavorite, imgUrl }) {
     //useState()--------------------------------------------------------------------------------------
-    const [img, setImg] = React.useState("img/plus.jpg");
+
+    const [isImg, setImg] = React.useState(false);
+    const [isFavorits, setIsFavorits] = React.useState(false);
     const onPlus = () => {
         onClickPlus();
-        if (img == "img/plus.jpg") {
-            setImg("img/check.jpg");
-        } else {
-            setImg("img/plus.jpg");
-        }
+        setImg(!isImg);
         //------------------------------------------------------------------------------
-    } 
+    }
+
+    const addFavorite = () => {
+        setIsFavorits(!isFavorits);
+        
+    }
+
     return(
         <div className={styles.card}>
     <div className="favorite">
-        <a href="#" className="aLikes" onClick={onFavorite}></a>
+        <img className="aLikes" src={isFavorits ? "img/liked.svg" : "img/unliked.png"} onClick={addFavorite} />
         </div>
           <center><img width="133px" height="112px" src={imgUrl} /></center>
           <div className="width">
@@ -27,7 +31,7 @@ function Card({ title, price, onClickPlus, onFavorite, imgUrl }) {
               <span>Цена:</span>
               <b>{price} руб.</b>
             </div>
-                <img className={styles.btnPlus} onClick={onPlus} src={img} />
+                <img className={styles.btnPlus} onClick={onPlus} src={isImg ? ("img/check.jpg") : ("img/plus.jpg")} />
         </div>
     </div>
 </div>
