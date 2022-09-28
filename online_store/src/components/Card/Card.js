@@ -2,21 +2,28 @@ import React from "react";
 import styles from './Card.module.scss'
 
 
-function Card({ id, objects, title, price, onClickPlus, onFavorite, imgUrl, onDelFav, removeCart, favorited=false, favoritesItems }) {
-    //useState()--------------------------------------------------------------------------------------
-    
-    const [isImg, setImg] = React.useState(false);
+function Card({ 
+    id, 
+    objects, 
+    title, 
+    price, 
+    onClickPlus, 
+    onFavorite, 
+    imgUrl, 
+    onDelFav, 
+    removeCart, 
+    favorited, 
+    favoritesItems,
+    added
+}) {
+
+    const [isImg, setImg] = React.useState(added);
+
     const [isFavorits, setIsFavorits] = React.useState(favorited);
+
     const onPlus = () => {
         setImg(!isImg);
-        if (!isImg) {
-            onClickPlus();
-        } else {
-            console.log(`Delete check Cart ${id}`);
-            removeCart(id);
-        }
-        
-        //------------------------------------------------------------------------------
+        onClickPlus();
     }
     
     const addFavorite = () => {

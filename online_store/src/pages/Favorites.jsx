@@ -19,7 +19,7 @@ const Favorites = ({
             {
             favorits.length ? 
             "Мои закладки" : 
-            <div style={{"min-height": "550px"}} className='justify-center d-flex align-center flex noFavorite'>
+            <div style={{"height": "550px"}} className='justify-center d-flex align-center flex noFavorite'>
               <center>
                 <img width={70} height={70} src='img/smile.png' alt='smile'/>
               <h1>Закладок нет :(</h1>
