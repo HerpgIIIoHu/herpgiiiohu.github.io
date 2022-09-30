@@ -79,12 +79,12 @@ function Card({
                 <span>Цена:</span>
                 <b>{price} руб.</b>
               </div>
-              <img
+              {onClickPlus && <img
                 className={styles.btnPlus}
                 onClick={onPlus}
                 src={isAddedCard(imgUrl) ? "img/check.jpg" : "img/plus.jpg"}
                 alt="added sneakers"
-              />
+              />}
             </div>
           </div>
         </>

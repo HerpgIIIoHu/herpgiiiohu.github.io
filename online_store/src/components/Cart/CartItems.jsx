@@ -1,9 +1,9 @@
 import React from "react";
 import CartPrice from "./CartPrice";
 import axios from "axios";
-import AppContext from "./context";
+import AppContext from "../context";
 
-const CartItems = ({ items, onRemoveItem, setIsOrderComplete, setOrderId }) => {
+const CartItems = ({ items, onRemoveItem, setOrderId, setIsOrderComplete }) => {
   const [isLoad, setIsLoad] = React.useState(false);
   const { setCartItems, cartItems } = React.useContext(AppContext);
   const onClickOrder = async () => {
@@ -14,13 +14,14 @@ const CartItems = ({ items, onRemoveItem, setIsOrderComplete, setOrderId }) => {
         { items: cartItems }
       );
       setOrderId(data.id);
-      setIsOrderComplete(true);
       for (let i = 0; i < cartItems.length; i++) {
         const item = cartItems[i];
+        console.log(item);
         await axios.delete(
           `https://632f7355b56bd6ac45b0344e.mockapi.io/cart/${Number(item.id)}`
         );
       }
+      setIsOrderComplete(true);
       setCartItems([]);
     } catch (error) {
       alert("Не удылось создать заказ");

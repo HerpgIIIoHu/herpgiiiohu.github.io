@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AppContext from "./context";
+import AppContext from "../context";
 
 const Header = (props) => {
   const { cartItems } = React.useContext(AppContext);
@@ -29,7 +29,9 @@ const Header = (props) => {
           </Link>
         </li>
         <li>
+        <Link to="/orders">
           <img className="cu-p" src="img/user.svg" alt="User" />
+        </Link>
         </li>
       </ul>
     </header>

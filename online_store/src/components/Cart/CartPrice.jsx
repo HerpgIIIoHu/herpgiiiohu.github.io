@@ -1,5 +1,5 @@
 import React from "react";
-import AppContext from "./context";
+import AppContext from "../context";
 
 const CartPrice = ({ isLoad, onClickOrder }) => {
     const { cartItems } = React.useContext(AppContext);
