@@ -2,7 +2,7 @@ import React from "react";
 import AppContext from "../context/context";
 
 const CartPrice = ({ isLoad, onClickOrder }) => {
-    const { cartItems } = React.useContext(AppContext);
+  const { cartItems } = React.useContext(AppContext);
   return (
     <div className="price">
       <ul>
@@ -15,7 +15,10 @@ const CartPrice = ({ isLoad, onClickOrder }) => {
         <li className="d-flex justify-between">
           <span>Налог 5%:</span>
           <b>
-            {Math.floor(cartItems.reduce((sum, obj) => sum + Number(obj.price), 0) / 100) * 5} руб.
+            {Math.floor(
+              cartItems.reduce((sum, obj) => sum + Number(obj.price), 0) / 100
+            ) * 5}{" "}
+            руб.
           </b>
         </li>
       </ul>

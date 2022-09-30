@@ -29,9 +29,9 @@ const Header = (props) => {
           </Link>
         </li>
         <li>
-        <Link to="/orders">
-          <img className="cu-p" src="img/user.svg" alt="User" />
-        </Link>
+          <Link to="/orders">
+            <img className="cu-p" src="img/user.svg" alt="User" />
+          </Link>
         </li>
       </ul>
     </header>

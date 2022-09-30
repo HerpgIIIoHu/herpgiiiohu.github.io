@@ -21,7 +21,7 @@ function Card({
   loading,
 }) {
   const { isAddedCard } = React.useContext(AppContext);
-  
+
   const [isImg, setImg] = React.useState(added);
 
   const [isFavorits, setIsFavorits] = React.useState(favorited);
@@ -79,12 +79,14 @@ function Card({
                 <span>Цена:</span>
                 <b>{price} руб.</b>
               </div>
-              {onClickPlus && <img
-                className={styles.btnPlus}
-                onClick={onPlus}
-                src={isAddedCard(imgUrl) ? "img/check.jpg" : "img/plus.jpg"}
-                alt="added sneakers"
-              />}
+              {onClickPlus && (
+                <img
+                  className={styles.btnPlus}
+                  onClick={onPlus}
+                  src={isAddedCard(imgUrl) ? "img/check.jpg" : "img/plus.jpg"}
+                  alt="added sneakers"
+                />
+              )}
             </div>
           </div>
         </>

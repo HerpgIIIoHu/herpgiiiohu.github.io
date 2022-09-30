@@ -3,13 +3,21 @@ import React from "react";
 import Info from "../Cart/Info";
 import CartItems from "../Cart/CartItems";
 
-import styles from './Drawer.module.scss'
+import styles from "./Drawer.module.scss";
 
-const Drawer = ({ onClickClose, items = [], onRemoveItem, opened, isOrderComolete, setIsOrderComplete }) => {
-  
+const Drawer = ({
+  onClickClose,
+  items = [],
+  onRemoveItem,
+  opened,
+  isOrderComolete,
+  setIsOrderComplete,
+}) => {
   const [orderId, setOrderId] = React.useState(null);
   return (
-    <div className={`${styles.overlay} ${opened ? styles.overlayVisible : null}`}>
+    <div
+      className={`${styles.overlay} ${opened ? styles.overlayVisible : null}`}
+    >
       <div className={`${styles.drawer} `}>
         <h2 className="d-flex justify-between">
           Корзина
