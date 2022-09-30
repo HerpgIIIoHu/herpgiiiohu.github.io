@@ -155,7 +155,9 @@ header {
 }
 
 .itemss {
-  height: 100%;
+  overflow: auto;
+  height: 95%;
+  margin-bottom: 40px;
 }
 
 .closeBtn {

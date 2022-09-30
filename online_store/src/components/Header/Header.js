@@ -10,8 +10,8 @@ const Header = (props) => {
         <div className="headerLeft d-flex align-center cu-p">
           <img width="40px" height="40px" src="img/logo.png" alt="logotype" />
           <div className="headerInfo">
-            <h3>by Konstantinchik</h3>
-            <p>Store best sneakers</p>
+            <h3>Online Store Sneakers</h3>
+            <p>Store best sneakers in World</p>
           </div>
         </div>
       </Link>

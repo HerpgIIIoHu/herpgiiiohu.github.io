@@ -30,7 +30,7 @@ const CartItems = ({ items, onRemoveItem, setOrderId, setIsOrderComplete }) => {
   };
   return (
     <div style={{ height: "80%" }} className="">
-      <div className="itemss ">
+      <div className="itemss">
         {items.map((obj, index) => (
           <div key={index} className="cartItem d-flex align-center">
             <div className="logoCart">
