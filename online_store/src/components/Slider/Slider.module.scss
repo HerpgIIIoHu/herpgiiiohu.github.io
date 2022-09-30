@@ -1,0 +1,54 @@
+.divSlider {
+  z-index: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  .slider {
+    position: absolute;
+    right: 0;
+  }
+  .next {
+    cursor: pointer;
+    z-index: 1;
+    margin-right: 20px;
+    top: 137px;
+    position: absolute;
+    right: 0;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+  .prev {
+    cursor: pointer;
+    z-index: 0;
+    position: absolute;
+    left: 20px;
+    top: 130px;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+  .adidas {
+    margin-left: 16px;
+    margin-top: 16px;
+    position: absolute;
+  }
+  .hki {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 240.55px;
+    transform: translateY(-20px);
+  }
+  .green-btn {
+    top: 0;
+    height: 40px;
+    width: 177.46px;
+    transform: translateX(30px);
+
+    p {
+    }
+  }
+  position: relative;
+}

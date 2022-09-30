@@ -5,7 +5,7 @@ import Drawer from "./components/Drawer/Drawer";
 import axios from "axios";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
-import AppContext from "./components/context";
+import AppContext from "./components/context/context";
 import Orders from "./pages/Orders";
 
 // const sneackMockAPI = [
@@ -177,36 +177,28 @@ function App() {
     let item;
     try {
       if ((item = cartItems.find((item) => obj.imgUrl === item.imgUrl))) {
-        console.log(item);
         setCartItems((prev) =>
           cartItems.filter((itm) => itm.imgUrl !== obj.imgUrl)
         );
         await axios.delete(
           `https://632f7355b56bd6ac45b0344e.mockapi.io/cart/${item.id}`
         );
-        console.log(`Cart elem ${obj.id} delete`);
       } else {
         setCartItems((prev) => [...prev, obj]);
         if (cartItems.length === 0) {
-          console.log(obj);
           obj.id = 1;
-          console.log(obj);
           await axios.post(
             "https://632f7355b56bd6ac45b0344e.mockapi.io/cart",
             obj
           );
         } else {
           const len = cartItems.length + 1;
-          console.log(obj);
           obj.id = len;
-          console.log(obj);
           await axios.post(
             "https://632f7355b56bd6ac45b0344e.mockapi.io/cart",
             obj
           );
         }
-
-        console.log(`Added obj to Cart id ${obj.id}`);
       }
     } catch (error) {
       console.error(error, " onAddCart");
@@ -222,7 +214,6 @@ function App() {
     } catch (error) {
       console.error(error, "onRemove");
     }
-    console.log(`Cart id ${id} delete`);
   };
 
   const onRemoveFavorite = (id) => {
@@ -233,7 +224,6 @@ function App() {
     } catch (error) {
       console.error("onRemoveFavorite", error);
     }
-    console.log(`Favorits ${id} delete`);
   };
 
   const onAddToFavorite = (obj) => {
@@ -246,10 +236,8 @@ function App() {
         axios.delete(
           `https://632f7355b56bd6ac45b0344e.mockapi.io/favorite/${itm.id}`
         );
-        console.log(`Favorits ${obj.id} delete`);
         setItems((prev) => [...prev]);
       } else {
-        console.log(`Added obj to Favorite ${obj}`);
         axios
           .post("https://632f7355b56bd6ac45b0344e.mockapi.io/favorite", obj)
           .then((data) => setFavorits((prev) => [...prev, data.data]))
@@ -315,8 +303,6 @@ function App() {
               />
             }
           />
-        </Routes>
-        <Routes>
           <Route
             path="/"
             element={
@@ -335,8 +321,6 @@ function App() {
               />
             }
           />
-        </Routes>
-        <Routes>
           <Route
             path="/orders"
             element={<Orders onAddToFavorite={onAddToFavorite} />}

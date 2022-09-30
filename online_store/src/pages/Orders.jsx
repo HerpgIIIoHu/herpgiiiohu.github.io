@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card/Card";
-import AppContext from "../components/context";
+import AppContext from "../components/context/context";
 
 const Orders = ({ onAddToFavorite }) => {
   const [orders, setOrders] = React.useState([]);
@@ -13,7 +13,6 @@ const Orders = ({ onAddToFavorite }) => {
         "https://632f7355b56bd6ac45b0344e.mockapi.io/orders"
       );
       setOrders(data);
-      console.log(data);
     }
     order();
   }, []);
@@ -57,8 +56,7 @@ const Orders = ({ onAddToFavorite }) => {
               onFavorite={() => onAddToFavorite(obj)}
               key={index}
             />
-          )
-          )
+          ))
         )}
       </div>
     </div>

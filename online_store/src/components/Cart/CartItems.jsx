@@ -1,7 +1,7 @@
 import React from "react";
 import CartPrice from "./CartPrice";
 import axios from "axios";
-import AppContext from "../context";
+import AppContext from "../context/context";
 
 const CartItems = ({ items, onRemoveItem, setOrderId, setIsOrderComplete }) => {
   const [isLoad, setIsLoad] = React.useState(false);

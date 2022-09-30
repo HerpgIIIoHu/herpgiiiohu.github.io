@@ -1,11 +1,10 @@
 import React from "react";
 import Card from "../components/Card/Card";
 import { Link } from "react-router-dom";
-import AppContext from "../components/context";
+import AppContext from "../components/context/context";
 
 const Favorites = ({ onRemoveFavorite, onAddToFavorite, setFavorits }) => {
   const { favorits } = React.useContext(AppContext);
-  console.log(AppContext);
 
   const add = (obj) => {
     setFavorits((prev) => prev.filter((item) => item.id !== obj.id));
