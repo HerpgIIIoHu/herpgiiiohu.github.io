@@ -294,7 +294,7 @@ function App() {
 
         <Routes>
           <Route
-            path="/favorites"
+            path="favorites"
             element={
               <Favorites
                 onRemoveFavorite={onRemoveFavorite}
@@ -304,7 +304,7 @@ function App() {
             }
           />
           <Route
-            path="/"
+            path=""
             element={
               <Home
                 isLoading={isLoading}
@@ -322,7 +322,7 @@ function App() {
             }
           />
           <Route
-            path="/orders"
+            path="orders"
             element={<Orders onAddToFavorite={onAddToFavorite} />}
           />
         </Routes>
