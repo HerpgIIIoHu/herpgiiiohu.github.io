@@ -8,9 +8,6 @@ function Slider() {
     <Carousel>
       <Carousel.Item>
         <div className={styles.divSlider}>
-          <img className={styles.next} src="img/next.svg" alt="nextSlide" />
-          <img className={styles.prev} src="img/prev.png" alt="prevSlide" />
-          
           <img
             className={styles.slider}
             src="img/sliders.png"
@@ -20,9 +17,6 @@ function Slider() {
       </Carousel.Item>
       <Carousel.Item>
         <div className={styles.divSlider}>
-          <img className={styles.next} src="img/next.svg" alt="nextSlide" />
-          <img className={styles.prev} src="img/prev.png" alt="prevSlide" />
-          
           <img
             className={styles.slider}
             src="img/sliders.png"
@@ -32,9 +26,6 @@ function Slider() {
       </Carousel.Item>
       <Carousel.Item>
         <div className={styles.divSlider}>
-          <img className={styles.next} src="img/next.svg" alt="nextSlide" />
-          <img className={styles.prev} src="img/prev.png" alt="prevSlide" />
-          
           <img
             className={styles.slider}
             src="img/sliders.png"
