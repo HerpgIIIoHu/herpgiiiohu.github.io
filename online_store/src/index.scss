@@ -34,6 +34,12 @@ body {
   }
 }
 
+@media (max-width: 540px) {
+  .wrapper {
+    max-width: 370px;
+  }
+}
+
 header {
   border-bottom: 1px solid #eaeaea;
   padding: 40px;
