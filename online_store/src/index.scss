@@ -36,8 +36,12 @@ body {
 
 @media (max-width: 540px) {
   .wrapper {
-    min-width: 350;
-    max-width: 370px;
+    max-width: 390px;
+  }
+  .content {
+    input {
+      max-width: 90px!important;
+    }
   }
 }
 
@@ -98,7 +102,7 @@ header {
     font-weight: 700;
     font-size: 34px;
     margin: 0;
-    margin-left: 40px;
+    margin-left: 20px;
   }
 }
 
