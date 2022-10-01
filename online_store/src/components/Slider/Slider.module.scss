@@ -4,13 +4,13 @@
   margin-right: 20px;
   margin-bottom: 40px;
   .slider {
-    position: absolute;
+    z-index: 1;
     right: 0;
   }
   .next {
     cursor: pointer;
     z-index: 1;
-    margin-right: 20px;
+    margin-right: 10px;
     top: 137px;
     position: absolute;
     right: 0;
@@ -22,7 +22,7 @@
     cursor: pointer;
     z-index: 0;
     position: absolute;
-    left: 20px;
+    left: 10px;
     top: 130px;
     &:hover {
       transform: scale(1.5);

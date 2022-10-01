@@ -295,7 +295,7 @@ function App() {
 
         <Routes>
           <Route
-            path="favorites"
+            path="react-sneakers/favorites"
             element={
               <Favorites
                 onRemoveFavorite={onRemoveFavorite}
@@ -305,7 +305,7 @@ function App() {
             }
           />
           <Route
-            path=""
+            path="react-sneakers/"
             element={
               <Home
                 isLoading={isLoading}
@@ -323,7 +323,7 @@ function App() {
             }
           />
           <Route
-            path="orders"
+            path="react-sneakers/orders"
             element={<Orders onAddToFavorite={onAddToFavorite} />}
           />
         </Routes>

@@ -11,10 +11,10 @@ function Slider() {
           <img className={styles.next} src="img/next.svg" alt="nextSlide" />
           <img className={styles.prev} src="img/prev.png" alt="prevSlide" />
           <img className={styles.adidas} src="img/adidas.png" alt="logo" />
-          <img className="frog" src="img/slider.png" alt="font" />
+          
           <img
             className={styles.slider}
-            src="img/slider-img.png"
+            src="img/slider-frog.png"
             alt="fontImg"
           />
           <Carousel.Caption>
@@ -31,10 +31,10 @@ function Slider() {
           <img className={styles.next} src="img/next.svg" alt="nextSlide" />
           <img className={styles.prev} src="img/prev.png" alt="prevSlide" />
           <img className={styles.adidas} src="img/adidas.png" alt="logo" />
-          <img className="frog" src="img/slider.png" alt="font" />
+          
           <img
             className={styles.slider}
-            src="img/slider-img.png"
+            src="img/slider-frog.png"
             alt="fontImg"
           />
           <Carousel.Caption>
@@ -51,10 +51,10 @@ function Slider() {
           <img className={styles.next} src="img/next.svg" alt="nextSlide" />
           <img className={styles.prev} src="img/prev.png" alt="prevSlide" />
           <img className={styles.adidas} src="img/adidas.png" alt="logo" />
-          <img className="frog" src="img/slider.png" alt="font" />
+          
           <img
             className={styles.slider}
-            src="img/slider-img.png"
+            src="img/slider-frog.png"
             alt="fontImg"
           />
           <Carousel.Caption>
