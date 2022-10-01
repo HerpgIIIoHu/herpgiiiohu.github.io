@@ -17,7 +17,7 @@ const Header = (props) => {
       </Link>
 
       <ul className="headerRight d-flex">
-        <li onClick={props.onClickCart} className="cu-p">
+        <li onClick={props.onClickCart} className="li_cart cu-p">
           <img className="mr-30" src="img/cart.svg" alt="cart" />
           <span className="mr-30">
             {cartItems.reduce((sum, obj) => sum + Number(obj.price), 0)} руб.
