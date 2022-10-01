@@ -57,6 +57,9 @@ header {
 .li_cart {
   display: flex;
   flex: 1;
+  span {
+    text-align: center;
+  }
 }
 
 .content {
